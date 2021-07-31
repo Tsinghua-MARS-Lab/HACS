@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HACS Dataset</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60734989-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-60734989-2');
+    </script>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">HACS Dataset</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#explore">Clips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#explore2">Segments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#download">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/challenge.html">Challenge</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-heading text-uppercase">HACS</div>
+          <div class="intro-lead-in">Human Action Clips and Segments Dataset for Recognition and Temporal Localization</div>
+          <div class="intro-lead-in">1.55M clips on 504K videos, 140K segments on 50K videos</div>
+          <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#about">Learn More</a> -->
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p>[NEWS!] We will host HACS Temporal Action Localization Challenge at CVPR'21 <a href="http://activity-net.org/challenges/2021/index.html">International Challenge on Activity Recognition Workshop</a>. You are welcome to participate in our action localization challenge. The challenge guideline is <a href="http://hacs.csail.mit.edu/challenge.html">HERE</a>, and the evaluation server is open now! 
+            </p>
+
+            <h2 class="section-heading text-uppercase">About</h2>
+            <p>This project introduces a novel video dataset, named HACS (Human Action Clips and Segments).
+              It consists of two kinds of manual annotations.
+              HACS Clips contains 1.55M 2-second clip annotations; HACS Segments has complete action segments (from action start to end) on 50K videos.
+              The large-scale dataset is effective for pretraining action recognition and localization models, and also serves as a new benchmark for temporal action localization.
+              (*SLAC dataset is now part of HACS dataset.)
+            </p>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Large-scale Dataset</h4>
+            <p>HACS Clips includes:</p>
+            <ul><li>1.55M 2-second clips on 504K videos</li></ul>
+            <p>HACS Segments includes:</p>
+            <ul><li>140K complete segments on 50K videos</li></ul>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Efficient Annotations</h4>
+            <p>HACS annotation pipeline:</p>
+            <ul><li>Automatic clip sampling</li>
+              <!-- <li>Guideline to reduce ambiguity</li> -->
+              <li>Efficient clip annotation</li><li>Accurate segment annotation</li></ul>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-list-ol fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Benchmarking</h4>
+            <ul><li>HACS pretrained model improves performance on:<br> Kinetics, UCF, HMDB<br> THUMOS, ActivityNet</li><li>HACS Segments is a new action localization benchmark</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Clips-->
+    <section class="bg-light" id="explore">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">HACS Clips</h2>
+            <h3 class="section-subheading text-muted">Click MORE to find more clip samples.</h3>
+            <div><input type="button" class="btn-primary btn-lg text-uppercase refreshButton" value="MORE"></div>
+          </div>
+        </div>
+
+        <p style="text-align: center;">Each row shows the sampled clips from one video, their corresponding start and end times (start, end), and the annotations (Positive or Negative).</p>
+        <div class="row"><table id="clipSamples"></table></div>
+
+      </div>
+    </section>
+
+    <!-- Explore Segments -->
+    <section id="explore2">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">HACS Segments</h2>
+            <h3 class="section-subheading text-muted">Click MORE to find more segment samples.</h3>
+            <div><input type="button" class="btn-primary btn-lg text-uppercase refreshButton2" value="MORE"></div>
+          </div>
+        </div>
+
+        <p style="text-align: center;">Play the videos to check segment annotations, which are shown in the timelines below.</p>
+        <div class="row" id="segmentSamples"></div>
+
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="bg-light" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Download</h2>
+            <h3 class="section-subheading text-muted">Download our paper, dataset, code and pretrained models.</h3>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <div class="col-md-4">
+            <a class="portfolio-link" data-toggle="modal" href="#downloadPaper">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+              </span>
+              <span style="color:black;"><h4 class="service-heading">Paper</h4></span>
+            </a>
+            <ul><li>Paper released on arXiv.</li><li>Supplementary materials released.</li><ul>
+          </div>
+          <div class="col-md-4">
+            <a class="portfolio-link" data-toggle="modal" href="#downloadDataset">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+              </span>
+              <span style="color:black;"><h4 class="service-heading">Dataset</h4></span>
+            </a>
+            <!-- <p>Coming soon</p> -->
+            <ul><li>HACS v1.1 released.</li><ul>
+            <!-- <ul><li>8.8 seconds per clip</li><li>30.6 seconds per video</li><li>Savings in time: >95%</li><ul> -->
+          </div>
+          <div class="col-md-4">
+            <a class="portfolio-link" data-toggle="modal" href="#downloadModel">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+              <span style="color:black;"><h4 class="service-heading">Models</h4></span>
+            </a>
+            <ul><li>Coming soon.</li><ul>
+          </div>
+        </div>
+
+          <p>If you find our work helpful, please cite the following paper:</p>
+          <pre class="hightlight" style="background-color:rgba(0,0,0, 0.1)">
+          @article{zhao2019hacs,
+            title={HACS: Human Action Clips and Segments Dataset for Recognition and Temporal Localization},
+            author={Zhao, Hang and Yan, Zhicheng and Torresani, Lorenzo and Torralba, Antonio},
+            journal={arXiv preprint arXiv:1712.09374},
+            year={2019}
+          }</pre>
+
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Our Team</h2>
+            <h3 class="section-subheading text-muted">This work is a joint effort of several researchers.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-2">
+            <div class="team-member">
+              <a href="http://people.csail.mit.edu/hangzhao"><img class="mx-auto rounded-circle" src="http://people.csail.mit.edu/hangzhao/images/profile3.jpg" alt="">
+              <h4 style="color:black;">Hang<br>Zhao</h4></a>
+              <p class="text-muted text-center">MIT</p>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="team-member">
+              <a href="https://sites.google.com/view/zcyan"><img class="mx-auto rounded-circle" src="img/team/ZhichengYan_fb.jpg" alt="">
+              <h4 style="color:black;">Zhicheng<br>Yan</h4></a>
+              <p class="text-muted text-center">UIUC</p>
+            </div>
+          </div>
+          <!-- <div class="col-md-2">
+            <div class="team-member">
+              <a href="https://thoth.inrialpes.fr/people/wang/"><img class="mx-auto rounded-circle" src="https://thoth.inrialpes.fr/people/wang/image/wang.jpg" alt=""></a>
+              <h4>Heng<br>Wang</h4>
+              <p class="text-muted text-center">Facebook Research</p>
+            </div>
+          </div> -->
+          <div class="col-md-2">
+            <div class="team-member">
+              <a href="http://www.cs.dartmouth.edu/~lorenzo/home.html"><img class="mx-auto rounded-circle" src="http://www.cs.dartmouth.edu/~lorenzo/home_files/LT.jpg" alt="">
+              <h4 style="color:black;">Lorenzo<br>Torresani</h4></a>
+              <p class="text-muted text-center">Dartmouth College</p>
+            </div>
+          </div>
+          <!-- <div class="col-md-2">
+            <div class="team-member">
+              <a href="https://research.fb.com/people/paluri-manohar/"><img class="mx-auto rounded-circle" src="https://research.fb.com/wp-content/uploads/2016/12/manohar-paluri.jpg" alt=""></a>
+              <h4>Manohar<br>Paluri</h4>
+              <p class="text-muted text-center">Facebook Research</p>
+            </div>
+          </div> -->
+          <div class="col-md-2">
+            <div class="team-member">
+              <a href="http://web.mit.edu/torralba/www/"><img class="mx-auto rounded-circle" src="http://web.mit.edu/torralba/www/assets/images/antonioTorralbaS.jpg" alt="">
+              <h4 style="color:black;">Antonio<br>Torralba</h4></a>
+              <p class="text-muted text-center">MIT</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-2">
+            <a href="https://www.mit.edu"><img class="img-fluid d-block" width=150 src="img/MIT_Logo.png" alt=""></a>
+          </div>
+          <div class="col-sm-6">
+            <a href="https://research.fb.com"><img class="img-fluid d-block mx-auto" width=500 src="img/fb-research-og.png" alt=""></a>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <!-- <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h3 class="section-subheading text-muted">Email us by filling the form below.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="contactForm" name="sentMessage" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required data-validation-required-message="Please enter your name.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="email" type="email" placeholder="Your Email *" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" id="title" type="title" placeholder="Title *" required data-validation-required-message="Title.">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="bg-light" id="related">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 text-center">
+            <h3>Related Datasets</h3>
+          </div>
+          <div class="col-md-2 text-center">
+            <a href="http://activity-net.org"><h4 style="color:black;">ActivityNet</h4></a>
+          </div>
+          <div class="col-md-2 text-center">
+            <a href="https://deepmind.com/research/open-source/open-source-datasets/kinetics/"><h4 style="color:black;">Kinetics</h4></a>
+          </div>
+          <div class="col-md-2 text-center">
+            <a href="http://moments.csail.mit.edu"><h4 style="color:black;">Moments<br>In Time</h4></a>
+          </div>
+          <div class="col-md-2 text-center">
+            <a href="http://crcv.ucf.edu/data/UCF101.php"><h4 style="color:black;">UCF101</h4></a>
+          </div>
+          <div class="col-md-2 text-center">
+            <a href="http://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/"><h4 style="color:black;">HMDB</h4></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="copyright">Copyright &copy; HACS 2019</span>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Paper -->
+    <div class="portfolio-modal modal fade" id="downloadPaper" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <h2 class="text-uppercase">Paper</h2>
+                <div class="modal-body">
+                  <!-- Details Go Here -->
+                  <a href="https://arxiv.org/abs/1712.09374"><h5>ArXiv 1712.09374</h5>
+                  <i class="fa fa-file-text fa-4x"></i></a>
+                </div>
+
+                <h3 style="margin-top: 30px;">Supplementary Materials</h3>
+
+                <h5 style="margin-top: 30px;">Efficient Clip Annotations</h5>
+                <p> We show a live video of the efficient clip annotation process:
+                    a number of clips are presented simultaneously,
+                    and the annotator only needs to click
+                    the clips to flip their labels, which are indicated by boxes in
+                    green (positive) and red (negative), respectively.
+                </p>
+                <video width="400" autoplay controls>
+                  <source src="suppl/clips_annotation_tool.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
+
+                <h5 style="margin-top: 30px;">Accurate Segment Annotations</h5>
+                <p> We show a live video of labeling action segment boundaries:
+                    a timeline overview is shown below the video player,
+                    and a zoom-in view of current time window is shown at the bottom
+                    for accurate temporal annotation.
+                </p>
+                <video width="600" autoplay controls>
+                  <source src="suppl/demo-segment-annotation-high-jump.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
+
+                <h5 style="margin-top: 30px;">Annotation Guideline</h5>
+                <p> We prepare an annotation guideline to clearly define actions,
+                    and clarify ambiguity in the annotation process. For
+                    each action, we give textual action start/end definition,
+                    positive clip examples, and optionally hard negative examples to
+                    clarify potential ambiguity.
+                    Note that in the original guideline, exmaples are shown as video clips.
+                </p>
+                <a href="suppl/annotation_guideline.pdf"><h5>Guideline.pdf</h5><i class="fa fa-file-text fa-4x"></i></a>
+
+                <div class="modal-body">
+                  <ul class="list-inline">
+                    <li>HACS Team</li>
+                    <li>Jan. 2019</li>
+                  </ul>
+                </div>
+
+                <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i>Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dataset -->
+    <div class="portfolio-modal modal fade" id="downloadDataset" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <h2 class="text-uppercase">Dataset</h2>
+                <div class="modal-body">
+                  <!-- Details Go Here -->
+                  <p>Check out the github repository to get the full dataset and toolkit:</p>
+                  <!-- <h3>Github Repository</h3> -->
+                  <a href="https://github.com/hangzhaomit/HACS-dataset"><h5>https://github.com/hangzhaomit/HACS-dataset</h5><i class="fa fa-github fa-4x"></i></a>
+                  <p>To download missing Youtube videos, please find instructions in the repository.</p>
+
+                  <p>Or you can only download the dataset file here:</p>
+                  <a href="dataset/HACS_v1.1.1.zip"><i class="fa fa-file-text fa-4x"></i></a>
+
+                  <ul class="list-inline">
+                    <li>HACS Team</li>
+                    <li>Jan. 2019</li>
+                  </ul>
+                </div>
+                <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i>Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code -->
+    <div class="portfolio-modal modal fade" id="downloadModel" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <h2 class="text-uppercase">Code and models</h2>
+                <div class="modal-body">
+                  <!-- Details Go Here -->
+                  <h3>Github Repository</h3>
+                  <a href="https://github.com/facebookresearch/SLAC"><i class="fa fa-github fa-4x"></i></a>
+
+                  <h3 style="margin-top: 30px;">Pretrained Models</h3>
+                  <h5 style="margin-top: 30px;">Caffe2</h5>
+                  <h5 style="margin-top: 30px;">PyTorch</h5>
+                  <h5 style="margin-top: 30px;">TensorFlow</h5>
+                </div>
+
+                <div class="modal-body">
+                  <ul class="list-inline">
+                    <li>HACS Team</li>
+                    <li>Jan. 2019</li>
+                  </ul>
+                </div>
+
+                <button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i>Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+
+    <link rel="icon" href="amalia/samples/images/favicon.ico">
+    <!-- <script src="amalia/bower_components/jquery/dist/jquery.js"></script> -->
+    <script src="amalia/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="amalia/bower_components/raphael/raphael.js"></script>
+    <link href="amalia/build/css/amalia.js.min.css" rel="stylesheet">
+    <script src="amalia/build/js/amalia.js.min.js"></script>
+    <script src="amalia/build/js/amalia.js-plugin-timeline.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+    <script src="explorer.js"></script>
+    <script src="gifs.js"></script>
+    <script src="segments.js"></script>
+
+  </body>
+
+</html>

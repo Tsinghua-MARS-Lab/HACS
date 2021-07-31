@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HACS Temporal Action Localization Challenge 2019</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">HACS Dataset</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#explore">Clips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#explore2">Segments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#download">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/challenge.html">Challenge</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-heading">HACS Temporal Action Localization Challenge 2019</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p>
+              We hosted HACS Temporal Action Localization Challenge at <a href="https://sites.google.com/view/multimodalvideo">ICCV'19 Workshop on Multi-modal Video Analysis</a>.
+              The goal of this challenge is to detect actions in untrimmed videos. The action localization challenge uses HACS Segments dataset, which contains:
+            </p>
+            <ul>
+                <li>200 classes, 140K action segments</li>
+                <li>37.6K/6K training/validation videos, 6K testing videos</li>
+                <li>* Sparse annotations in HACS Clips dataset are NOT permitted. *</li>
+            </ul>
+
+            <br><h3>Winners</h3>
+
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <p> In this year's challenge, we have recieved 21 submissions from 5 teams. Winner teams' performance and reports can be found below.</p>
+              </div>
+            <div class="col-lg-2 text-center"></div>
+            <div class="col-lg-8 text-center">
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <th>Rank </th>
+                            <th>Team</th>
+                            <th>mAP Score</th>
+                        </tr>
+                        <tr>
+                            <td>First Place</td>
+                            <td> Microsoft Research Asia & University of Rochester<a href="challenge/challenge19_report_winner.pdf">[report]</a></td>
+                            <td><b>23.49</b></td>
+                        </tr>
+                        <tr>
+                            <td>Runner Up</td>
+                            <td> Samsung Research Institute China <a href="challenge/challenge19_report_runnerup.pdf">[report]</a></td>
+                            <td><b>22.10</b></td>
+                        </tr>
+                        <tr>
+                            <td>Baseline</td>
+                            <td> SSN re-implemented in HACS paper </a></td>
+                            <td>16.10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+            <br><h3>Data Download</h3>
+
+            <p>Please follow instructions in <a href="https://github.com/hangzhaomit/HACS-dataset">THIS PAGE</a> to download HACS Segments dataset.</p>
+
+            <br><h3>Evaluation Metric</h3>
+
+            <p>
+            We use mAP as our evaluation metric, which is the same as <a href="https://github.com/activitynet/ActivityNet/blob/master/Evaluation/get_detection_performance.py">ActivityNet localization metric</a>.
+            </p>
+            <p>
+            Interpolated Average Precision (AP) is used as the metric for evaluating the results on each activity category. Then, the AP is averaged over all the activity categories (mAP).
+            To determine if a detection is a true positive, we inspect the temporal intersection over union (tIoU) with a ground truth segment, and check whether or not it is greater or equal to a given threshold (e.g. tIoU > 0.5).
+            The official metric used in this task is the average mAP, which is defined as the mean of all mAP values computed with tIoU thresholds between
+            0.5 and 0.95 (inclusive) with a step size of 0.05.
+            </p>
+
+            <br><h3>Submission</h3>
+            <p><a href="http://challenge.moments.csail.mit.edu/">Submission portal</a> is now closed, stay tuned for our next year's challenge.</p>
+            <p>
+              You should submit a JSON file in the following format, where each video ID has a list of predicted action segments.
+              Submission portal will be available on August 1st.
+            </p>
+            <pre class="hightlight text-left" style="background-color:rgba(0,0,0, 0.1)">
+{
+  "results": {
+    "--0edUL8zmA": [
+      {
+        "label": "Dodgeball",
+        "score": 0.84,
+        "segment": [5.40, 11.60]
+      },
+      {
+        "label": "Dodgeball",
+        "score": 0.71,
+        "segment": [12.60, 88.16]
+      }
+    ]
+  }
+}</pre>
+
+            <br><h3>Important Dates</h3>
+            <ul>
+                <li>
+                    <strong>July 5, 2019</strong>: Training data made available.</li>
+                <li>
+                    <strong>August 1, 2019</strong>: Testing videos are released and submission site opened.</li>
+                <li>
+                    <strong>October 19, 2019</strong>: Submission deadline.</li>
+                <li>
+                    <strong>November 2, 2019</strong>: Winner(s) are invited to present at the workshop.</li>
+            </ul>
+
+            <p>Please contact HangZhao AT csail.mit.edu for further questions.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="copyright">Copyright &copy; HACS 2019</span>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+
+    <link rel="icon" href="amalia/samples/images/favicon.ico">
+    <!-- <script src="amalia/bower_components/jquery/dist/jquery.js"></script> -->
+    <script src="amalia/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="amalia/bower_components/raphael/raphael.js"></script>
+    <link href="amalia/build/css/amalia.js.min.css" rel="stylesheet">
+    <script src="amalia/build/js/amalia.js.min.js"></script>
+    <script src="amalia/build/js/amalia.js-plugin-timeline.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+  </body>
+
+</html>

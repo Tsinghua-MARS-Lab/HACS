@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HACS Temporal Action Localization Challenge 2021</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">HACS Dataset</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#explore">Clips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#explore2">Segments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#download">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/index.html#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="http://hacs.csail.mit.edu/challenge.html">Challenge</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-heading">HACS Temporal Action Localization Challenge 2021</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p>
+              We will be hosting HACS Temporal Action Localization Challenge 2021 in the <a href="http://activity-net.org/challenges/2021/index.html">CVPR'21 International Challenge on Activity Recognition Workshop</a>.
+            </p>
+
+            <p>
+              The goal of this challenge is to temporally localize actions in untrimmed videos. This year, we continue to  have the classical fully-supervised learning track, while introducing a MODIFIED weakly-supervised learning track. Given the practical situation that high quality action segment labels are expensive to obtain, and weak labels like video tags are usually easily accessible, weakly-supervised learning is an attractive solution. Participants in the weakly-supervised learning track can only use the action class labels for model training, but not the start and end time of the action segments. Performance of these two tracks will be ranked separately.
+            </p>
+
+            <p>
+              For your reference, results of last year's HACS Challenge can be found at <a href="http://hacs.csail.mit.edu/challenge2020.html">HACS Challenge 2020</a>.
+            </p>
+
+            <h3>Challenge 1: Supervised Learning Track</h3>
+            <p>
+              For this track, participants will use HACS Segments, a video dataset carefully annotated with a complete set of temporal action segments  for the  temporal action localization task. Each video can contain multiple action segments. The task is to localize these action segments by predicting the start and end times of each action as well as the action label. Participants are allowed to leverage multi-modalities (e.g. audio/video). Common external datasets for pre-training are allowed, but it needs to be clearly documented. Training and testing will be performed on the following dataset:
+            </p>
+
+            <p><span style="font-weight:bold">HACS Segments</span></p>
+            <ul>
+                <li>Temporal annotations on action segment type, start time, end time.</li>
+                <li>200 action classes, nearly 140K action segments annotated in nearly 50K videos.</li>
+                <li>37.6Ktraining videos, 6K validation videos, 6K testing videos.</li>
+                <li>* HACS Clips dataset is NOT permitted in this track. *</li>
+            </ul>
+
+
+            <br><h3>Challenge 2: Weakly-supervised Learning Track</h3>
+            <p>
+		For this track, participants will ONLY use the action type labels in the HACS Segments dataset for training, but NOT the annotations of the start and end time of action segments. Participants are encouraged to explore a weakly-supervised training procedure to learn action localization models. Testing will still be performed on the test set of HACS Segments.
+            </p>
+
+            <p><span style="font-weight:bold">HACS Segments with Action Type ONLY</span></p>
+            <ul>
+                <li>Action type annotations on the videos.</li>
+                <li>200 action classes, 140K action type annotations on nearly 50K videos.</li>
+                <li>37.6K trainingvideos, 6K validation videos, 6K testing videos.</li>
+            </ul>
+
+
+
+            <br><h3>Data Download</h3>
+
+            <p>Please follow instructions in <a href="https://github.com/hangzhaomit/HACS-dataset">THIS PAGE</a> to download HACS Segments dataset.</p>
+            <p>You can choose to use our <a href="./hacs_segments_features.zip">I3D pretrained features (2FPS)</a> on HACS Segments directly for the challenge. This I3D-50 model is pretrained on Kinetics-400, taking clips of 16 frames as input, and outputing a feature of 2048-D.</p>
+
+            <br><h3>Evaluation Metric</h3>
+            <p>
+            We use mAP as our evaluation metric, which is the same as <a href="https://github.com/activitynet/ActivityNet/blob/master/Evaluation/get_detection_performance.py">ActivityNet localization metric</a>.
+            </p>
+            <p>
+            Interpolated Average Precision (AP) is used as the metric for evaluating the results on each activity category. Then, the AP is averaged over all the activity categories (mAP).
+            To determine if a detection is a true positive, we inspect the temporal intersection over union (tIoU) with a ground truth segment, and check whether or not it is greater or equal to a given threshold (e.g. tIoU > 0.5).
+            The official metric used in this task is the average mAP, which is defined as the mean of all mAP values computed with tIoU thresholds between
+            0.5 and 0.95 (inclusive) with a step size of 0.05.
+            </p>
+
+            <br><h3>Submission</h3>
+            <p>Submission portals are now open:<br>
+            <a href="https://competitions.codalab.org/competitions/31307">Challenge 1: Supervised Learning Track</a>
+            <br><a href="https://competitions.codalab.org/competitions/31308">Challenge 2: Weakly-supervised Learning Track</a>
+            </p>
+            <p>
+              Performance of BOTH tracks are evaluated on the test set of HACS Segments. You should submit a JSON file (and then ZIP into .zip) in the following format, where each video ID has a list of predicted action segments. And a short report (no page requirements) on your methodi should be sent to HangZhao AT csail.mit.edu.
+            </p>
+            <pre class="hightlight text-left" style="background-color:rgba(0,0,0, 0.1)">
+{
+  "results": {
+    "--0edUL8zmA": [
+      {
+        "label": "Dodgeball",
+        "score": 0.84,
+        "segment": [5.40, 11.60]
+      },
+      {
+        "label": "Dodgeball",
+        "score": 0.71,
+        "segment": [12.60, 88.16]
+      }
+    ]
+  }
+}</pre>
+
+            <br><h3>Important Dates</h3>
+            <ul>
+                <li>
+                    <strong>April 5, 2021</strong>: Challenge is announced, Train/Val/Test sets are made available.</li>
+                <li>
+                    <strong>May 5, 2021</strong>: Evaluation server opened. (DELAYED)</li>
+                <li>
+                    <strong>June 12, 2021</strong>: Evaluation server closed.</li>
+                <li>
+                    <strong>June 14, 2021</strong>: Deadline for submitting the report.</li>
+                <li>
+                    <strong>June 19, 2021</strong>: Challenge workshop at CVPR 2021.</li>
+            </ul>
+
+            <p>Please contact ZhaoHang0124 AT gmail.com for further questions.</p>
+
+            <br><h3>Sponsorship</h3>
+            <p>We still have a few openings for the sponsorship. All funds will be used to reward the participants based on the results of their submissions.  If you are interested, please check the <a href="https://docs.google.com/document/d/1D2DndGEFloGqgZcVCR1ZgKe5yG0sezDxQ_CCImEG-t8/edit?usp=sharing">HACS Sponsor Package</a> and contact Hang Zhao to become a sponsor!</p>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <span class="copyright">Copyright &copy; HACS 2021</span>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+
+    <link rel="icon" href="amalia/samples/images/favicon.ico">
+    <!-- <script src="amalia/bower_components/jquery/dist/jquery.js"></script> -->
+    <script src="amalia/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="amalia/bower_components/raphael/raphael.js"></script>
+    <link href="amalia/build/css/amalia.js.min.css" rel="stylesheet">
+    <script src="amalia/build/js/amalia.js.min.js"></script>
+    <script src="amalia/build/js/amalia.js-plugin-timeline.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+  </body>
+
+</html>
